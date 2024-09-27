@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*  Pour du responsive on utilise box-sizing: border-box. Cela permet de s'assurer que le padding et la bordure sont inclus dans la largeur et la hauteur des éléments, ce qui facilite la gestion des dimensions des éléments et contribue à la réactivité. */
+
+body {
+    font-family: "Fredoka One",sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #fff;
+}
+
+h1 {    
+    font-size: 2rem; /*2 car c'est la taille de la police de base par exemple 16px pour la police racine = 2rem c'est a dire 32 pixels */
+}
+/* rem permet au texte de s'adapter en fonction de la taille de la police racine ce qui est utile pour le responsive */
+
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    gap: 20px;
+    padding: 40px;
+}
+/* Pour le responsive j'utilise flex-wrap: wrap; pour que les éléments passent à la ligne si l'écran est trop petit. */
+/* flex-wrap : wrap permet aux élément de la grille à la ligne suivante si l'espace disponible est insuffisant pour les contenir. */
+
+/* Ajustement des images pour occuper plus d'espace */
+.grid-item {
+    text-align: center;
+    width: 44%; 
+    min-width: 200px;
+    background-color: #6d6d6d; /* Ajout d'un fond gris clair aux images */
+    padding: 10px;
+    border: 2px solid #ccc; /* Ajoute une bordure autour des images */
+    border-radius: 20px; 
+    transition: transform 0.3s ease; /* Ajout d'une kikou transition pour le fun */
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Effet hover pour zoomer légèrement trouver en recherche */
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* Ajustement du footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    position: relative; /* avec relative j'évite les chevauchements */
+    bottom: 0;
+    width: 100%;
+}
+
+/* test responsive pour petit écran */
+@media screen and (max-width: 768px) {
+    .image-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .grid-item {
+        
+        width: 80%; 
+    }
+}
+/* je veux styliser mes bouttons*/
+.button {
+    background-color: #7d7d7d; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Effet de survol en mode experience ui*/
+.button:hover {
+    background-color: #000000; 
+    transform: scale(1.05); /* zoom sur le bouton */
+}
+/* Effet de clic */
+.button:active {
+    background-color: #000000; /* Vert encore plus foncé */
+    transform: scale(0.95); /* Légère réduction de la taille */
+}
+
+/* Styles pour le profil */
+.profile {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff; 
+}
+
+.profile-name {
+    font-size: 24px;
+    color: #fffafa;
+    margin-top: 10px;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #4CAF50; 
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+.education {
+    padding: 20px;
+    background-color: #fff; 
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.education-item {
+    margin-bottom: 20px;
+}
+
+.education-item h3 {
+    margin: 0;
+    color: #4bd429;
+}
